@@ -14,10 +14,6 @@ public class ProductPro extends ProductPlus {
     return discount;
   }
 
-  public void setDiscount(double discount) {
-    this.discount = discount;
-  }
-
   @Override
   public String toString() {
     return "Product name: " + getName() + " | Price: " + getPrice() + " | Vat:" + getVat()

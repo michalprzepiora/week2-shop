@@ -14,10 +14,6 @@ public class ProductPlus extends ProductStart {
     return vat;
   }
 
-  public void setVat(double vat) {
-    this.vat = vat;
-  }
-
   @Override
   public String toString() {
     return "Product name: " + getName() + " | Price: " + getPrice() + " | Vat:" + getVat()

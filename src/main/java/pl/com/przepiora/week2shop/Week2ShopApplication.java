@@ -11,9 +11,9 @@ import pl.com.przepiora.week2shop.service.ProductFactory;
 @SpringBootApplication
 public class Week2ShopApplication {
 
-  final
+  private final
   ProductFactory productFactory;
-  final
+  private final
   Cart cart;
 
   public Week2ShopApplication(ProductFactory productFactory,
@@ -37,7 +37,5 @@ public class Week2ShopApplication {
     cart.getAll().forEach(product -> System.out.println(product.toString()));
     double totalPrice = cart.getAll().stream().mapToDouble(Product::getTotalPrice).sum();
     System.out.println("SUM OF TOTAL PRICE: " + totalPrice);
-
   }
-
 }
