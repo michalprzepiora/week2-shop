@@ -8,6 +8,8 @@ import pl.com.przepiora.week2shop.model.Product;
 import pl.com.przepiora.week2shop.repository.Cart;
 import pl.com.przepiora.week2shop.service.ProductFactory;
 
+import java.math.BigDecimal;
+
 @SpringBootApplication
 public class Week2ShopApplication {
 
@@ -35,7 +37,11 @@ public class Week2ShopApplication {
     cart.addProduct(productFactory.getNewProductRndPrice("Book"));
 
     cart.getAll().forEach(product -> System.out.println(product.toString()));
-    double totalPrice = cart.getAll().stream().mapToDouble(Product::getTotalPrice).sum();
-    System.out.println("SUM OF TOTAL PRICE: " + totalPrice);
+
+    BigDecimal finalPrice = new BigDecimal(0);
+    for (Product product : cart.getAll()) {
+      finalPrice = finalPrice.add(product.getTotalPrice());
+    }
+    System.out.println("SUM OF TOTAL PRICE: " + finalPrice);
   }
 }

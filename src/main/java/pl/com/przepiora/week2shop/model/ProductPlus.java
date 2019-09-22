@@ -1,16 +1,18 @@
 package pl.com.przepiora.week2shop.model;
 
+import java.math.BigDecimal;
+
 public class ProductPlus extends ProductStart {
 
-  private double vat;
+  private BigDecimal vat;
 
   public ProductPlus(String name, double price, double vat) {
     super(name, price);
-    this.vat = vat;
-    setTotalPrice(price * vat + price);
+    this.vat = BigDecimal.valueOf(vat);
+    totalPrice = getPrice().multiply(this.vat).add(getPrice());
   }
 
-  public double getVat() {
+  BigDecimal getVat() {
     return vat;
   }
 
