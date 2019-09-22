@@ -9,7 +9,6 @@ public interface ProductFactory {
   Product getNewProductRndPrice(String name);
 
   default double getRandomNumberInRange(int min, int max) {
-
     if (min >= max) {
       throw new IllegalArgumentException("max must be greater than min");
     }

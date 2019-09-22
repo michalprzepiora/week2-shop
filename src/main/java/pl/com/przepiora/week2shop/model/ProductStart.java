@@ -8,7 +8,6 @@ public class ProductStart extends Product {
 
   @Override
   public String toString() {
-    return "Product name: " + getName() + " | Price: " + getPrice() + " | FINAL PRICE "
-        + getTotalPrice();
+    return "Product name: " + getName() + " | Price: " + getPrice();
   }
 }
